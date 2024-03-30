@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+CONFIG_PATH=""
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    echo "Using .config..."
+    CONFIG_PATH="/home/${USER}/.config"
+else
+    echo "Using XDG_CONFIG_HOME..."
+    CONFIG_PATH=$XDG_CONFIG_HOME
+fi
+
+stow . --target $CONFIG_PATH

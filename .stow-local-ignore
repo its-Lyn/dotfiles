@@ -1,0 +1,9 @@
+\.git
+\.gitignore
+
+stow-invoke
+gh_assets
+
+^/README.*
+^/LICENSE.*
+^/COPYING
