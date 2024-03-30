@@ -96,9 +96,10 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# They use the last letters becuase whatever
+bindsym $mod+g layout stacking
+bindsym $mod+d layout tabbed
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -125,15 +126,17 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+q workspace number $ws5
+bindsym $mod+w workspace number $ws6
+bindsym $mod+e workspace number $ws7
+bindsym $mod+r workspace number $ws8
+
+# Probably never gonna be used lol!
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
@@ -178,10 +181,10 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+Ctrl+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+Ctrl+r mode "resize"
 
 
 ## Custom Styles ##
@@ -223,11 +226,15 @@ exec --no-startup-id ~/.config/i3/scripts/displays.sh
 exec --no-startup-id nitrogen --restore &
 
 ## ## Compositor ## ##
-exec --no-startup-id picom &
+exec --no-startup-id picom --config ~/.config/picom/picom.conf &
 
 ## ## Bar ## ##
 ## # After the script, you MUST add your bar's name. # ##
 exec_always --no-startup-id ~/.config/i3/scripts/start_polybar.sh cutie
+
+## ## Notification Daemon ## ##
+exec --no-startup-id ~/.config/i3/scripts/start_dunst.sh
+
 
 ## Keybinds ##
 

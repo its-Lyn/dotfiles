@@ -1,0 +1,22 @@
+[global]
+	font = "AgaveNerdFont 12"
+	line_height = 3
+
+	width = 400
+	height = 500
+
+	height = 600
+
+	origin = top-right
+
+	transparency = 20
+
+	frame_color = "#df9ee9"
+	background  = "#8b6be3"
+
+	corner_radius = 10
+
+	icon_corner_radius = 10
+	max_icon_size = 120
+	
+	gap_size = 7
