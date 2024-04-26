@@ -51,7 +51,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id "rofi -show drun"
+bindsym $mod+space exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -204,31 +204,3 @@ bar {
   }
   status_command i3status
 }
-
-
-## Custom Styles ##
-
-## ##  Border Size ## ##
-default_border pixel 2
-default_floating_border pixel 2
-
-## ## Border Colour ## ##
-# TODO
-
-## ## Gaps ## ##
-gaps inner 7
-
-
-## Auto Start ##
-
-## ## Setup Screen ## ##
-exec --no-startup-id ~/.config/i3/scripts/screen.sh
-
-
-## Keybinds ##
-
-## ## Screenshot ## ##
-bindsym $mod+shift+s exec --no-startup-id flameshot gui
-
-## ## Make window 'sticky' ## ##
-bindsym $mod+shift+t sticky toggle
